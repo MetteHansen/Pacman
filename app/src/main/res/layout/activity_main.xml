@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="org.example.pacman.MainActivity" >
+
+
+
+    <!-- Notice how the custom view is referenced here with
+    a full package path-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/controller"
+        android:weightSum="4">
+
+        <Button
+            android:id="@+id/moveLeft"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/move_left" />
+
+        <Button
+            android:id="@+id/moveUp"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/move_up" />
+
+        <Button
+            android:id="@+id/moveDown"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/move_down" />
+
+        <Button
+            android:id="@+id/moveRight"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/move_right" />
+    </LinearLayout>
+
+    <org.example.pacman.GameView
+    android:id="@+id/gameView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+        android:layout_below="@id/info"
+    android:layout_above="@+id/controller">
+
+    </org.example.pacman.GameView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/info"
+        android:weightSum="3">>
+
+        <TextView
+            android:id="@+id/points"
+            android:textSize="24sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Score:"
+            android:layout_weight="1.33"/>
+
+        <TextView
+            android:id="@+id/timer"
+            android:textSize="24sp"
+            android:text="Time:"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.33"/>
+
+        <Button
+            android:id="@+id/pause"
+            android:textSize="24sp"
+            android:text="P"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.34"/>
+    </LinearLayout>
+
+</RelativeLayout>
